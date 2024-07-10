@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="19.3.575.0" MinimumVersion="15.0">
+  <Package>
+    <CurrentLibraryPackageVersionId value="null" />
+    <PackageDefinition name="Definition">
+      <Conditions type="list">
+        <PackageStepCondition>
+          <Architecture>Both</Architecture>
+          <Version>All</Version>
+          <TypeName>OperatingSystem</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+          <TypeName>LoggedOnUser</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <ConditionMode>None</ConditionMode>
+          <InventoryCollectionId value="null" />
+          <InventoryCollectionName></InventoryCollectionName>
+          <TypeName>Collection</TypeName>
+        </PackageStepCondition>
+      </Conditions>
+      <CopyMode>Default</CopyMode>
+      <DelayedApprovalTimeSpan>7.00:00:00</DelayedApprovalTimeSpan>
+      <DownloadApprovalMode>Manual</DownloadApprovalMode>
+      <InventoryScanProfileId value="null" />
+      <IsDownloadApprovalModeInherited value="true" />
+      <ScanAfterDeployment value="null" />
+      <Steps type="list">
+        <CommandStep>
+          <Command>MsiExec.exe /qn /norestart /X{449118E8-48C0-43A5-9403-7A38DD9B2BEE}</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>Exists</ConditionMode>
+              <Hive>HKEY_LOCAL_MACHINE</Hive>
+              <IncludeSubKeys value="false" />
+              <Key>SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{449118E8-48C0-43A5-9403-7A38DD9B2BEE}</Key>
+              <MatchToWow6432 value="false" />
+              <TextCompare>Contains</TextCompare>
+              <Value>MsiExec.exe</Value>
+              <ValueCompare>NoMatch</ValueCompare>
+              <ValueName>UninstallString</ValueName>
+              <ValueType>Text</ValueType>
+              <TypeName>Registry</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>Unistall 3.9.2</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="false" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>MsiExec.exe /qn /norestart /X{394F6DDE-D43A-4325-9C60-DED72CDE5ADC}</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>Exists</ConditionMode>
+              <Hive>HKEY_LOCAL_MACHINE</Hive>
+              <IncludeSubKeys value="false" />
+              <Key>SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{394F6DDE-D43A-4325-9C60-DED72CDE5ADC}</Key>
+              <MatchToWow6432 value="false" />
+              <TextCompare>Contains</TextCompare>
+              <Value>MsiExec.exe</Value>
+              <ValueCompare>NoMatch</ValueCompare>
+              <ValueName>UninstallString</ValueName>
+              <ValueType>Text</ValueType>
+              <TypeName>Registry</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>Unistall 3.9.3</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="false" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>MsiExec.exe /qn /norestart /X{3CF65950-63A6-49B7-B1AB-F9DA6AD7F344}</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>Exists</ConditionMode>
+              <Hive>HKEY_LOCAL_MACHINE</Hive>
+              <IncludeSubKeys value="false" />
+              <Key>SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{3CF65950-63A6-49B7-B1AB-F9DA6AD7F344}</Key>
+              <MatchToWow6432 value="false" />
+              <TextCompare>Contains</TextCompare>
+              <Value>MsiExec.exe</Value>
+              <ValueCompare>NoMatch</ValueCompare>
+              <ValueName>UninstallString</ValueName>
+              <ValueType>Text</ValueType>
+              <TypeName>Registry</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>Unistall 3.9.4</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="false" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>MsiExec.exe /qn /norestart /X{6C8963D0-F99B-4D20-8000-BA3037837D85}</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>Exists</ConditionMode>
+              <Hive>HKEY_LOCAL_MACHINE</Hive>
+              <IncludeSubKeys value="false" />
+              <Key>SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{6C8963D0-F99B-4D20-8000-BA3037837D85}</Key>
+              <MatchToWow6432 value="false" />
+              <TextCompare>Contains</TextCompare>
+              <Value>{6C8963D0-F99B-4D20-8000-BA3037837D85}</Value>
+              <ValueCompare>NoMatch</ValueCompare>
+              <ValueName>UninstallString</ValueName>
+              <ValueType>Text</ValueType>
+              <TypeName>Registry</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Unistall 3.9.5</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="false" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>MsiExec.exe /qn /norestart /X{A391F1BC-BD90-49F3-BE7B-ECA0867DA529}</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>Exists</ConditionMode>
+              <Hive>HKEY_LOCAL_MACHINE</Hive>
+              <IncludeSubKeys value="false" />
+              <Key>SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{A391F1BC-BD90-49F3-BE7B-ECA0867DA529}</Key>
+              <MatchToWow6432 value="false" />
+              <TextCompare>Contains</TextCompare>
+              <Value>{A391F1BC-BD90-49F3-BE7B-ECA0867DA529}</Value>
+              <ValueCompare>NoMatch</ValueCompare>
+              <ValueName>UninstallString</ValueName>
+              <ValueType>Text</ValueType>
+              <TypeName>Registry</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>Unistall 3.9.6</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="false" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <InstallStep>
+          <CustomCommandLine></CustomCommandLine>
+          <FileName>$(Repository)\INPS\UniEMens_4.exe</FileName>
+          <Files></Files>
+          <IncludeDirectory value="false" />
+          <LeaveInstallFile value="false" />
+          <MsiOperation>Install</MsiOperation>
+          <MsiQuiet value="true" />
+          <MsiRestart>Never</MsiRestart>
+          <Parameters>/currentuser /S</Parameters>
+          <SuccessCodes>0,1641,3010,2359302</SuccessCodes>
+          <RunAs>LoggedOnUser</RunAs>
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="1634" />
+              <InventoryCollectionName>INPS uniEMens aggiornato</InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Install Uniemens 4.0.4</Title>
+          <TypeName>Install</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </InstallStep>
+      </Steps>
+      <Timeout value="60" />
+      <UseCustomTimeout value="false" />
+      <RunAs value="null" />
+    </PackageDefinition>
+    <Description>https://www.inps.it/it/it/software/dettaglio-software.software.2023.12.862.nuovo-software-di-controllo-uniemens-multi-piattaforma-(-desktop-e-da-riga-di-comando)---versione-4-0-4---dicembre-2023.html</Description>
+    <NewLibraryPackageVersionId value="null" />
+    <OriginalId value="null" />
+    <Version>4.0.4</Version>
+    <IsAutoDownload value="false" />
+    <FolderId value="23" />
+    <LibraryPackageVersionId value="null" />
+    <Name>Uniemens</Name>
+    <Path>Private Packages\Software\Inps\Uniemens</Path>
+    <PackageDisplaySettings name="DisplaySettings">
+      <DisplayType>Normal</DisplayType>
+      <IconKey>Icon-Package</IconKey>
+      <SortOrder value="7" />
+    </PackageDisplaySettings>
+  </Package>
+</AdminArsenal.Export>
