@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="19.3.575.0" MinimumVersion="19.3.58">
+  <Package>
+    <CurrentLibraryPackageVersionId value="null" />
+    <PackageDefinition name="Definition">
+      <Conditions type="list">
+        <PackageStepCondition>
+          <Architecture>Both</Architecture>
+          <Version>All</Version>
+          <TypeName>OperatingSystem</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+          <TypeName>LoggedOnUser</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <ConditionMode>None</ConditionMode>
+          <InventoryCollectionId value="null" />
+          <InventoryCollectionName></InventoryCollectionName>
+          <TypeName>Collection</TypeName>
+        </PackageStepCondition>
+      </Conditions>
+      <CopyMode>Default</CopyMode>
+      <DelayedApprovalTimeSpan>7.00:00:00</DelayedApprovalTimeSpan>
+      <DownloadApprovalMode>Manual</DownloadApprovalMode>
+      <InventoryScanProfileId value="null" />
+      <IsDownloadApprovalModeInherited value="true" />
+      <ScanAfterDeployment value="null" />
+      <Steps type="list">
+        <InstallStep>
+          <CustomCommandLine></CustomCommandLine>
+          <FileName>$(Repository)\INPS\CA-70408.Exe</FileName>
+          <Files></Files>
+          <IncludeDirectory value="false" />
+          <LeaveInstallFile value="false" />
+          <MsiOperation>Install</MsiOperation>
+          <MsiQuiet value="true" />
+          <MsiRestart>Never</MsiRestart>
+          <Parameters>/VERYSILENT /NORESTART /SUPPRESSMSGBOXES /LOG="c:\temp\instCARPE.log</Parameters>
+          <SuccessCodes>0,1641,3010,2359302</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Install</Title>
+          <TypeName>Install</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </InstallStep>
+        <InstallStep>
+          <CustomCommandLine></CustomCommandLine>
+          <FileName>$(Repository)\INPS\RTE-NE51.exe</FileName>
+          <Files></Files>
+          <IncludeDirectory value="false" />
+          <LeaveInstallFile value="false" />
+          <MsiOperation>Install</MsiOperation>
+          <MsiQuiet value="true" />
+          <MsiRestart>Never</MsiRestart>
+          <Parameters>"RTE-NE51.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-</Parameters>
+          <SuccessCodes>0,1641,3010,2359302</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Bits64</Architecture>
+              <Version>Windows11</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <CompanyName></CompanyName>
+              <Description></Description>
+              <Directory>C:\RTE-NE51</Directory>
+              <FileConditionMode>DoesNotExist</FileConditionMode>
+              <Filename>FS.exe</Filename>
+              <FileVersion></FileVersion>
+              <FileVersionCompare>NoMatch</FileVersionCompare>
+              <IncludeSubDirectories value="false" />
+              <MatchToAlternateVariable value="false" />
+              <ProductName></ProductName>
+              <ProductVersion></ProductVersion>
+              <ProductVersionCompare>NoMatch</ProductVersionCompare>
+              <TypeName>File</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>Continue</ErrorMode>
+          <Title>Cobol RunTime</Title>
+          <TypeName>Install</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </InstallStep>
+        <CommandStep>
+          <Command>robocopy c:\rte-ne51 c:\svabi\files /E /R:5 /W:2</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Bits64</Architecture>
+              <Version>Windows11</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Copy runtime file to svabi folder</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+      </Steps>
+      <Timeout value="60" />
+      <UseCustomTimeout value="false" />
+      <RunAs value="null" />
+    </PackageDefinition>
+    <Description>https://www.inps.it/it/it/software/dettaglio-software.software.2022.10.611.software-carpe-pc-ca-r-pe---software-per-il-calcolo-della-retribuzione-media-pensionabile-ed-ipotesi-di-rata-pensione.html
+
+https://www.inps.it/content/dam/inps-site/software/2022/10/611/allegatisoftware/CAU70408.zip</Description>
+    <NewLibraryPackageVersionId value="null" />
+    <OriginalId value="null" />
+    <Version>7.04.08</Version>
+    <IsAutoDownload value="false" />
+    <FolderId value="23" />
+    <LibraryPackageVersionId value="null" />
+    <Name>Ca.R.Pe</Name>
+    <Path>Private Packages\Software\Inps\Ca.R.Pe</Path>
+    <PackageDisplaySettings name="DisplaySettings">
+      <DisplayType>Normal</DisplayType>
+      <IconKey>Icon-Package</IconKey>
+      <SortOrder value="7" />
+    </PackageDisplaySettings>
+  </Package>
+</AdminArsenal.Export>
