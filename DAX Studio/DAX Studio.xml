@@ -102,7 +102,7 @@
         </CommandStep>
         <InstallStep>
           <CustomCommandLine></CustomCommandLine>
-          <FileName>$(Repository)\DaxStudio_3_0_11_setup.exe</FileName>
+          <FileName>$(Repository)\DaxStudio.exe</FileName>
           <Files></Files>
           <IncludeDirectory value="false" />
           <LeaveInstallFile value="false" />
