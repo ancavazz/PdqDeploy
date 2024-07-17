@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQInventory" Name="PDQ Inventory" Version="19.3.575.0" MinimumVersion="4.0">
+  <Collection>
+    <ReportDefinition name="Definition">
+      <RootFilter name="Filter">
+        <Comparison>All</Comparison>
+        <Filters type="list">
+          <ValueFilter>
+            <Table>Application</Table>
+            <Column>Name</Column>
+            <Comparison>StartsWith</Comparison>
+            <Value>DAX Studio</Value>
+          </ValueFilter>
+        </Filters>
+      </RootFilter>
+      <ReportDefinitionTypeName>BasicReportDefinition</ReportDefinitionTypeName>
+      <Columns type="list">
+        <Column>
+          <Column>ComputerId</Column>
+          <Summary></Summary>
+          <Table>Computer</Table>
+          <Title></Title>
+        </Column>
+      </Columns>
+    </ReportDefinition>
+    <IsDrilldown value="false" />
+    <ImportedPath></ImportedPath>
+    <TypeName>DynamicCollection</TypeName>
+    <Created>2024-07-12T23:33:41.0000000+02:00</Created>
+    <Description></Description>
+    <Error></Error>
+    <Id value="1999" />
+    <LibraryCollectionId value="null" />
+    <IsEnabled value="true" />
+    <Modified>2024-07-12T23:34:41.0000000+02:00</Modified>
+    <Name>DAX Studio</Name>
+    <ParentId value="1448" />
+    <Path>Software\DAX Studio</Path>
+    <Type>DynamicCollection</Type>
+    <Children type="list">
+      <Collection>
+        <ReportDefinition name="Definition">
+          <RootFilter name="Filter">
+            <Comparison>All</Comparison>
+            <Filters type="list">
+              <ValueFilter>
+                <Table>Application</Table>
+                <Column>Name</Column>
+                <Comparison>StartsWith</Comparison>
+                <Value>DAX Studio</Value>
+              </ValueFilter>
+              <GroupFilter>
+                <Comparison>NotAll</Comparison>
+                <Filters type="list">
+                  <ValueFilter>
+                    <Table>Collection</Table>
+                    <TableTitle>Member of Collection</TableTitle>
+                    <Column>Name</Column>
+                    <Comparison>Contains</Comparison>
+                    <Value>DAX Studio (Latest)</Value>
+                  </ValueFilter>
+                </Filters>
+              </GroupFilter>
+            </Filters>
+          </RootFilter>
+          <ReportDefinitionTypeName>BasicReportDefinition</ReportDefinitionTypeName>
+          <Columns type="list">
+            <Column>
+              <Column>ComputerId</Column>
+              <Summary></Summary>
+              <Table>Computer</Table>
+              <Title></Title>
+            </Column>
+          </Columns>
+        </ReportDefinition>
+        <IsDrilldown value="false" />
+        <ImportedPath></ImportedPath>
+        <TypeName>DynamicCollection</TypeName>
+        <Created>2024-07-12T23:35:00.0000000+02:00</Created>
+        <Description></Description>
+        <Error></Error>
+        <Id value="2000" />
+        <LibraryCollectionId value="null" />
+        <IsEnabled value="true" />
+        <Modified>2024-07-12T23:38:26.0000000+02:00</Modified>
+        <Name>DAX Studio (Oldest)</Name>
+        <ParentId value="1999" />
+        <Path>Software\DAX Studio\DAX Studio (Oldest)</Path>
+        <Type>DynamicCollection</Type>
+        <Children type="list" />
+      </Collection>
+      <Collection>
+        <ReportDefinition name="Definition">
+          <RootFilter name="Filter">
+            <Comparison>All</Comparison>
+            <Filters type="list">
+              <ValueFilter>
+                <Table>Application</Table>
+                <Column>Name</Column>
+                <Comparison>StartsWith</Comparison>
+                <Value>DAX Studio</Value>
+              </ValueFilter>
+              <ValueFilter>
+                <Table>Application</Table>
+                <Column>Version</Column>
+                <Comparison>Contains</Comparison>
+                <Value>3.0.11</Value>
+              </ValueFilter>
+            </Filters>
+          </RootFilter>
+          <ReportDefinitionTypeName>BasicReportDefinition</ReportDefinitionTypeName>
+          <Columns type="list">
+            <Column>
+              <Column>ComputerId</Column>
+              <Summary></Summary>
+              <Table>Computer</Table>
+              <Title></Title>
+            </Column>
+          </Columns>
+        </ReportDefinition>
+        <IsDrilldown value="false" />
+        <ImportedPath></ImportedPath>
+        <TypeName>DynamicCollection</TypeName>
+        <Created>2024-07-12T23:38:51.0000000+02:00</Created>
+        <Description></Description>
+        <Error></Error>
+        <Id value="2001" />
+        <LibraryCollectionId value="null" />
+        <IsEnabled value="true" />
+        <Modified>2024-07-12T23:39:37.0000000+02:00</Modified>
+        <Name>DAX Studio (Latest)</Name>
+        <ParentId value="1999" />
+        <Path>Software\DAX Studio\DAX Studio (Latest)</Path>
+        <Type>DynamicCollection</Type>
+        <Children type="list" />
+      </Collection>
+      <Collection>
+        <ReportDefinition name="Definition">
+          <RootFilter name="Filter">
+            <Comparison>NotAll</Comparison>
+            <Filters type="list">
+              <ValueFilter>
+                <Table>Application</Table>
+                <Column>Name</Column>
+                <Comparison>Contains</Comparison>
+                <Value>DAX Studio</Value>
+              </ValueFilter>
+            </Filters>
+          </RootFilter>
+          <ReportDefinitionTypeName>BasicReportDefinition</ReportDefinitionTypeName>
+          <Columns type="list">
+            <Column>
+              <Column>ComputerId</Column>
+              <Summary></Summary>
+              <Table>Computer</Table>
+              <Title></Title>
+            </Column>
+          </Columns>
+        </ReportDefinition>
+        <IsDrilldown value="false" />
+        <ImportedPath></ImportedPath>
+        <TypeName>DynamicCollection</TypeName>
+        <Created>2024-07-12T23:42:00.0000000+02:00</Created>
+        <Description></Description>
+        <Error></Error>
+        <Id value="2002" />
+        <LibraryCollectionId value="null" />
+        <IsEnabled value="true" />
+        <Modified>2024-07-12T23:44:53.0000000+02:00</Modified>
+        <Name>DAX Studio (Not Installed)</Name>
+        <ParentId value="1999" />
+        <Path>Software\DAX Studio\DAX Studio (Not Installed)</Path>
+        <Type>DynamicCollection</Type>
+        <Children type="list" />
+      </Collection>
+    </Children>
+  </Collection>
+</AdminArsenal.Export>
