@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="19.4.40.0" MinimumVersion="15.0">
+  <Package>
+    <CurrentLibraryPackageVersionId value="null" />
+    <PackageDefinition name="Definition">
+      <Conditions type="list">
+        <PackageStepCondition>
+          <Architecture>Both</Architecture>
+          <Version>All</Version>
+          <TypeName>OperatingSystem</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+          <TypeName>LoggedOnUser</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <ConditionMode>None</ConditionMode>
+          <InventoryCollectionId value="null" />
+          <InventoryCollectionName></InventoryCollectionName>
+          <TypeName>Collection</TypeName>
+        </PackageStepCondition>
+      </Conditions>
+      <CopyMode>Default</CopyMode>
+      <DelayedApprovalTimeSpan>7.00:00:00</DelayedApprovalTimeSpan>
+      <DownloadApprovalMode>Manual</DownloadApprovalMode>
+      <InventoryScanProfileId value="null" />
+      <IsDownloadApprovalModeInherited value="true" />
+      <ScanAfterDeployment value="null" />
+      <Steps type="list">
+        <FileCopyStep>
+          <AllowOverwrite value="true" />
+          <CopyAllFiles value="false" />
+          <FilePatternsText></FilePatternsText>
+          <IgnoreOverwriteErrors value="false" />
+          <IncludeSubFolders value="false" />
+          <Mode>SingleFile</Mode>
+          <Source>$(Repository)\CNA\Revo.7z</Source>
+          <Target>c:\temp</Target>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>File Copy</Title>
+          <TypeName>FileCopy</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </FileCopyStep>
+        <CommandStep>
+          <Command>"C:\Program Files\7-Zip\7z.exe" x C:\temp\revo.7z -oc:\temp -y</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <CompanyName></CompanyName>
+              <Description></Description>
+              <Directory>C:\temp\</Directory>
+              <FileConditionMode>Exists</FileConditionMode>
+              <Filename>revo.7z</Filename>
+              <FileVersion></FileVersion>
+              <FileVersionCompare>NoMatch</FileVersionCompare>
+              <IncludeSubDirectories value="false" />
+              <MatchToAlternateVariable value="false" />
+              <ProductName></ProductName>
+              <ProductVersion></ProductVersion>
+              <ProductVersionCompare>NoMatch</ProductVersionCompare>
+              <TypeName>File</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Extract file drivers.7z</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>C:\Temp\Revo\App\RevoUPPort\x64\revounpro.exe /wa “Spotify"</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs>LoggedOnUser</RunAs>
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <CompanyName></CompanyName>
+              <Description></Description>
+              <Directory>C:\Temp\Revo\App\RevoUPPort\x64\</Directory>
+              <FileConditionMode>Exists</FileConditionMode>
+              <Filename>revounpro.exe</Filename>
+              <FileVersion></FileVersion>
+              <FileVersionCompare>NoMatch</FileVersionCompare>
+              <IncludeSubDirectories value="false" />
+              <MatchToAlternateVariable value="false" />
+              <ProductName></ProductName>
+              <ProductVersion></ProductVersion>
+              <ProductVersionCompare>NoMatch</ProductVersionCompare>
+              <TypeName>File</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Revo uninstall Appx</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <CommandStep>
+          <Command>RD /S /Q "c:\temp\revo\"</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>delete folder Revo</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+      </Steps>
+      <Timeout value="60" />
+      <UseCustomTimeout value="false" />
+      <RunAs value="null" />
+    </PackageDefinition>
+    <Description></Description>
+    <NewLibraryPackageVersionId value="null" />
+    <OriginalId value="null" />
+    <Version>1.0</Version>
+    <IsAutoDownload value="false" />
+    <FolderId value="4" />
+    <LibraryPackageVersionId value="null" />
+    <Name>Uninstall Spotify Revo</Name>
+    <Path>Private Packages\Unistall\Uninstall Spotify Revo</Path>
+    <PackageDisplaySettings name="DisplaySettings">
+      <DisplayType>Normal</DisplayType>
+      <IconKey>Icon-Package</IconKey>
+      <SortOrder value="2" />
+    </PackageDisplaySettings>
+  </Package>
+</AdminArsenal.Export>

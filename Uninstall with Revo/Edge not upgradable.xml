@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminArsenal.Export Code="PDQInventory" Name="PDQ Inventory" Version="19.4.40.0" MinimumVersion="3.1">
+  <Report>
+    <ReportDefinition name="Definition">
+      <RootFilter name="Filter">
+        <Comparison>All</Comparison>
+        <Filters type="list">
+          <ValueFilter>
+            <Table>PDQDeployment</Table>
+            <TableTitle>Deployment</TableTitle>
+            <Column>PackageName</Column>
+            <Comparison>Contains</Comparison>
+            <Value>Edge</Value>
+          </ValueFilter>
+          <ValueFilter>
+            <Table>PDQDeployment</Table>
+            <TableTitle>Deployment</TableTitle>
+            <Column>Status</Column>
+            <Comparison>Contains</Comparison>
+            <Value>Failed</Value>
+          </ValueFilter>
+          <ValueFilter>
+            <Table>PDQDeployment</Table>
+            <TableTitle>Deployment</TableTitle>
+            <Column>Error</Column>
+            <Comparison>Contains</Comparison>
+            <Value>1603</Value>
+          </ValueFilter>
+          <GroupFilter>
+            <Comparison>NotAll</Comparison>
+            <Filters type="list">
+              <ValueFilter>
+                <Table>Application</Table>
+                <Column>Name</Column>
+                <Comparison>Contains</Comparison>
+                <Value>Microsoft Edge</Value>
+              </ValueFilter>
+              <ValueFilter>
+                <Table>Application</Table>
+                <Column>Version</Column>
+                <Comparison>Contains</Comparison>
+                <Value>$(AppVerEdgeBusiness)</Value>
+              </ValueFilter>
+            </Filters>
+          </GroupFilter>
+        </Filters>
+      </RootFilter>
+      <ReportDefinitionTypeName>BasicReportDefinition</ReportDefinitionTypeName>
+      <Columns type="list">
+        <Column>
+          <Column>Name</Column>
+          <Summary></Summary>
+          <Table>Computer</Table>
+          <Title></Title>
+        </Column>
+        <Column>
+          <Column>IsOnline</Column>
+          <Summary></Summary>
+          <Table>Computer</Table>
+          <Title></Title>
+        </Column>
+      </Columns>
+    </ReportDefinition>
+    <Created>2025-02-11T17:07:38.0000000+01:00</Created>
+    <Description></Description>
+    <IsNew value="false" />
+    <Modified>2025-02-11T19:20:01.0000000+01:00</Modified>
+    <Name>Edge not upgradable</Name>
+    <Path>Reports\Edge not upgradable</Path>
+    <ReportFolderId value="1" />
+    <TypeName>BasicReport</TypeName>
+    <ReportType>BasicReport</ReportType>
+  </Report>
+</AdminArsenal.Export>
