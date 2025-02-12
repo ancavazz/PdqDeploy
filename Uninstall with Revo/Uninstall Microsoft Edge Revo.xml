@@ -178,6 +178,35 @@
           <IsPostStep value="false" />
           <IsPreStep value="false" />
         </CommandStep>
+        <CommandStep>
+          <Command>del c:\temp\revo.7z</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Delete file zip</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
         <PackageStep>
           <InventoryScanProfileId value="2" />
           <Conditions type="list">
@@ -212,7 +241,7 @@
     <Description></Description>
     <NewLibraryPackageVersionId value="null" />
     <OriginalId value="null" />
-    <Version>1.0</Version>
+    <Version>1.1</Version>
     <IsAutoDownload value="false" />
     <FolderId value="4" />
     <LibraryPackageVersionId value="null" />
