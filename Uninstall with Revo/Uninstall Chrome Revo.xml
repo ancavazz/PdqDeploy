@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="19.4.40.0" MinimumVersion="15.0">
+<AdminArsenal.Export Code="PDQDeploy" Name="PDQ Deploy" Version="19.4.40.0" MinimumVersion="17.0">
   <Package>
     <CurrentLibraryPackageVersionId value="null" />
     <PackageDefinition name="Definition">
@@ -12,6 +12,21 @@
         <PackageStepCondition>
           <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
           <TypeName>LoggedOnUser</TypeName>
+        </PackageStepCondition>
+        <PackageStepCondition>
+          <CompanyName></CompanyName>
+          <Description></Description>
+          <Directory>C:\Program Files\Google\Chrome</Directory>
+          <FileConditionMode>Exists</FileConditionMode>
+          <Filename>chrome.exe</Filename>
+          <FileVersion></FileVersion>
+          <FileVersionCompare>NoMatch</FileVersionCompare>
+          <IncludeSubDirectories value="true" />
+          <MatchToAlternateVariable value="false" />
+          <ProductName></ProductName>
+          <ProductVersion></ProductVersion>
+          <ProductVersionCompare>NoMatch</ProductVersionCompare>
+          <TypeName>File</TypeName>
         </PackageStepCondition>
         <PackageStepCondition>
           <ConditionMode>None</ConditionMode>
@@ -106,7 +121,7 @@
           <IsPreStep value="false" />
         </CommandStep>
         <CommandStep>
-          <Command>C:\Temp\Revo\App\RevoUPPort\x64\revounpro.exe /mu "Google Chrome" /path "C:\Program Files (x86)\Google" /32 /mode Advanced</Command>
+          <Command>C:\Temp\Revo\App\RevoUPPort\x64\revounpro.exe /mu "Google Chrome" /path "C:\Program Files\Google\Chrome\Application" /64 /mode Advanced</Command>
           <Files></Files>
           <SuccessCodes>0</SuccessCodes>
           <RunAs value="null" />
@@ -178,6 +193,61 @@
           <IsPostStep value="false" />
           <IsPreStep value="false" />
         </CommandStep>
+        <CommandStep>
+          <Command>del c:\temp\revo.7z</Command>
+          <Files></Files>
+          <SuccessCodes>0</SuccessCodes>
+          <RunAs value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Delete file zip</Title>
+          <TypeName>Command</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </CommandStep>
+        <PackageStep>
+          <InventoryScanProfileId value="null" />
+          <Conditions type="list">
+            <PackageStepCondition>
+              <Architecture>Both</Architecture>
+              <Version>All</Version>
+              <TypeName>OperatingSystem</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <IsUserLoggedOn>AlwaysRun</IsUserLoggedOn>
+              <TypeName>LoggedOnUser</TypeName>
+            </PackageStepCondition>
+            <PackageStepCondition>
+              <ConditionMode>None</ConditionMode>
+              <InventoryCollectionId value="null" />
+              <InventoryCollectionName></InventoryCollectionName>
+              <TypeName>Collection</TypeName>
+            </PackageStepCondition>
+          </Conditions>
+          <ErrorMode>StopDeploymentFail</ErrorMode>
+          <Title>Scan</Title>
+          <TypeName>ScanStep</TypeName>
+          <IsEnabled value="true" />
+          <IsPostStep value="false" />
+          <IsPreStep value="false" />
+        </PackageStep>
       </Steps>
       <Timeout value="60" />
       <UseCustomTimeout value="false" />
@@ -186,7 +256,7 @@
     <Description></Description>
     <NewLibraryPackageVersionId value="null" />
     <OriginalId value="null" />
-    <Version>1.0</Version>
+    <Version>2.0</Version>
     <IsAutoDownload value="false" />
     <FolderId value="4" />
     <LibraryPackageVersionId value="null" />
